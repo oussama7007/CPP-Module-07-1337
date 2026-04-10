@@ -1,5 +1,5 @@
 
-NAME        = templates_exercise
+NAME        = whatever
 CXX        = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -rf
