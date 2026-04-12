@@ -9,8 +9,11 @@
 
 template <typename I> 
 
-I iter(I a,const std::size_t b, void (*f) (I&))
+I iter(I *arr,const std::size_t b, void (*f)(I&))
 {
-
+    for(int i = 0; i < b ; i++)
+    {
+        f(arr[i]);
+    }
     return ;
 }
