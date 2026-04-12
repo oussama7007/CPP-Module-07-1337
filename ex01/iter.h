@@ -2,7 +2,8 @@
 
 
 
-#pragma once 
+#ifndef ITER_H
+#define ITER_H
 
 #include <iostream>
 
@@ -15,5 +16,7 @@ I iter(I *arr,const std::size_t b, void (*f)(I&))
     {
         f(arr[i]);
     }
-    return ;
+    
 }
+
+#endif
