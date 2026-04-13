@@ -3,7 +3,7 @@
 #include <cctype>
 #include "iter.h"
 
-// Note: I fixed the typo in the function name (devide -> divide)
+
 void divide_by2(int &i)
 {
     i /= 2;
@@ -24,7 +24,7 @@ void camel(std::string &str)
 int main()
 {
     std::cout << "================== Test string array ===================" << std::endl;
-    // Fixed: This must be a std::string array, not an int array!
+   
     std::string str_arr[] = {"HelLow", "OusSamA", "What You FroM"};
     
     ::iter(str_arr, 3, camel);
@@ -33,7 +33,7 @@ int main()
         std::cout << str_arr[i] << std::endl;
 
      std::cout << "================== Test int  array ===================" << std::endl;
-    int int_arr[] = {100, 200, 300};
+    int int_arr[] = {10, 200, 300};
 
     ::iter(int_arr, 3, divide_by2);
     
