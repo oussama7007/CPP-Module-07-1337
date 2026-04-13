@@ -6,4 +6,13 @@
 #include <iostream>
 
 
-typename <template A>
+template  <typename T>
+
+class myClass
+{
+    private:
+        T * ptr;
+        unsigned int size;
+    public:
+        
+}
