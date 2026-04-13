@@ -9,7 +9,8 @@
 
 
 
-template <typename S> void  swap(S& x, S& y)
+template <typename S> 
+void  swap(S& x, S& y)
 {
     S tmp(x);
     // tmp = x ;
