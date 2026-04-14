@@ -19,7 +19,7 @@ class Array {
         
         Array(unsigned int n):  ptrs(new T[n]()), _size(n) {}
         
-        Array(const Array& other) : ptrs(new T[other._size]) , size(other._size) {
+        Array(const Array& other) : ptrs(new T[other._size]) , _size(other._size) {
             for (std::size_t i = 0 ; i< _size; i++)
             ptrs[i] = other.ptrs[i];
         }
