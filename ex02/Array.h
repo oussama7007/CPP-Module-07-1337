@@ -2,8 +2,8 @@
 
 
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef ARRAY_H
+# define ARRAY_H
 
 # include <iostream>
 
@@ -15,23 +15,45 @@ class Array {
         T* ptrs;
         unsigned int size;
     public:
-        Array();
-        Array(const Array& other);
-        Array& operator=(const Array& other);
-        ~Array();
+        Array() : ptrs(NULL), size(0) {}
+        
+        Array(unsigned int n);  data(new T[n]()), size(n) {}
+        
+        Array(const Array& other) : data(new T[other.size]) , size(other.size) {
+            for (std::size_t i = 0 ; i< size; i++)
+            ptrs[i] = other.ptrs[i];
+        }
 
-        Array(unsigned int n);  //Construction with an unsigned int n as a parameter: Creates an array of n elements
-                                //initialized by default.
+
+        Array& operator=(const Array& other)
+        {
+            if(this != &other)
+            {
+                delete[] ptrs;
+                size = other.size;
+                ptrs = new T[size];
+                for(std::size_t i = 0 ; i < size ; i++)
+                    ptrs[i] = other.ptrs[i];
+            }
+            return *this;
+        }
+        ~Array()
+        {
+            delete[] ptrs;
+        }
+
         
 
-        T& operator[](unsigned int index);
-        const T& operator[](unsigned int index) const;
+        T& operator[](unsigned int index) // bach tkheli user i dir modification inside array eg arr[0] = 42;
+        {
+            if()
+        }
+        const T& operator[](unsigned int index) const; // bach the user i 9ra data mli tkon array as read only 
 
         // Size function (must be const!)
         unsigned int size() const;
 
 };
-
 
 
 #endif
