@@ -13,14 +13,14 @@ class Array {
 
     private:
         T* ptrs;
-        unsigned int size;
+        unsigned int _size;
     public:
-        Array() : ptrs(NULL), size(0) {}
+        Array() : ptrs(new T[0]()), _size(0) {}
         
-        Array(unsigned int n):  ptrs(new T[n]()), size(n) {}
+        Array(unsigned int n):  ptrs(new T[n]()), _size(n) {}
         
-        Array(const Array& other) : ptrs(new T[other.size]) , size(other.size) {
-            for (std::size_t i = 0 ; i< size; i++)
+        Array(const Array& other) : ptrs(new T[other._size]) , size(other._size) {
+            for (std::size_t i = 0 ; i< _size; i++)
             ptrs[i] = other.ptrs[i];
         }
 
@@ -30,9 +30,9 @@ class Array {
             if(this != &other)
             {
                 delete[] ptrs;
-                size = other.size;
-                ptrs = new T[size];
-                for(std::size_t i = 0 ; i < size ; i++)
+                _size = other.size;
+                ptrs = new T[_size];
+                for(std::size_t i = 0 ; i < _size ; i++)
                     ptrs[i] = other.ptrs[i];
             }
             return *this;
@@ -46,20 +46,20 @@ class Array {
 
         T& operator[](unsigned int index) // bach tkheli user i dir modification inside array eg arr[0] = 42;
         {
-            if(index >= size)
+            if(index >= _size)
                 throw std::out_of_range("Index out of bounds");
             return ptrs[index];
         }
-        const T& operator[](unsigned int index) const; // bach the user i 9ra data mli tkon array as read only 
+        const T& operator[](unsigned int index) const // bach the user i 9ra data mli tkon array as read only 
         {
-            if(index >= size)
+            if(index >= _size)
                 throw std::out_of_range("Index out of bounds");
             return ptrs[index];
         }
         // Size function (must be const!)
         unsigned int size() const
         {
-            return this->size ;
+            return _size ;
         }
 
 };
