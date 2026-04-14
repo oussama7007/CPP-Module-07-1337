@@ -10,6 +10,7 @@
 
 template <typename T>
 class Array {
+
     private:
         T* ptrs;
         unsigned int size;
@@ -22,14 +23,12 @@ class Array {
         Array(unsigned int n);  //Construction with an unsigned int n as a parameter: Creates an array of n elements
                                 //initialized by default.
         
-        // Subscript operators
+
         T& operator[](unsigned int index);
         const T& operator[](unsigned int index) const;
 
         // Size function (must be const!)
         unsigned int size() const;
-
-
 
 };
 
