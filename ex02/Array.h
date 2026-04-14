@@ -30,7 +30,7 @@ class Array {
             if(this != &other)
             {
                 delete[] ptrs;
-                _size = other.size;
+                _size = other._size;
                 ptrs = new T[_size];
                 for(std::size_t i = 0 ; i < _size ; i++)
                     ptrs[i] = other.ptrs[i];
