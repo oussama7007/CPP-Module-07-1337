@@ -21,14 +21,14 @@ void  swap(S& x, S& y)
 
 template <typename Y> 
 
-Y min(Y x, Y y)
+Y min(const Y& x,const Y& y)
 {
     return (x < y ) ? x : y;
 } 
 
 template <typename M> 
 
-M max(M x, M y)
+M max(const M& x,const  M& y)
 {
     return (x > y ) ? x : y;
 }
