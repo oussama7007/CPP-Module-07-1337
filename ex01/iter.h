@@ -10,7 +10,7 @@
 
 template <typename I, typename F> 
 
-void  iter(I *arr,const std::size_t b, F f)
+void  iter(I *arr,std::size_t b, F f)
 {
     for(std::size_t i = 0; i < b ; i++)
     {
